@@ -14,7 +14,7 @@ pthread_mutex_t mutex;     // mutex for critical section
 
 // Producer thread function
 void* producer(void* arg)
-{
+{ 
     int item, i = 0;
     while (1)
     {

@@ -4,11 +4,11 @@
 struct Process
 {
     int id;
-    int at;   // Arrival Time
-    int bt;   // Burst Time
-    int ct;   // Completion Time
-    int wt;   // Waiting Time
-    int tat;  // Turnaround Time
+    int at;    // Arrival Time
+    int bt;    // Burst Time
+    int ct;    // Completion Time
+    int wt;    // Waiting Time
+    int tat;   // Turnaround Time
     int queue; // 0 = System, 1 = User
     int done;
 };
@@ -106,7 +106,7 @@ int main()
 
     float totalWT = 0, totalTAT = 0;
 
-    for (int i = 0; i < n; i++)
+    /*for (int i = 0; i < n; i++)
     {
         printf("%d\t%s\t%d\t%d\t%d\t%d\t%d\n",
                all[i].id,
@@ -116,6 +116,20 @@ int main()
                all[i].ct,
                all[i].wt,
                all[i].tat);
+
+        totalWT += all[i].wt;
+        totalTAT += all[i].tat;
+    }*/
+    for (int i = 0; i < n; i++)
+    {
+        if (all[i].queue == 0)
+            printf("%d\tSystem\t%d\t%d\t%d\t%d\t%d\n",
+                   all[i].id, all[i].at, all[i].bt,
+                   all[i].ct, all[i].wt, all[i].tat);
+        else
+            printf("%d\tUser\t%d\t%d\t%d\t%d\t%d\n",
+                   all[i].id, all[i].at, all[i].bt,
+                   all[i].ct, all[i].wt, all[i].tat);
 
         totalWT += all[i].wt;
         totalTAT += all[i].tat;

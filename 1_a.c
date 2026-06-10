@@ -4,11 +4,11 @@
 
 struct process
 {
-    int at;   // Arrival Time
-    int bt;   // Burst Time
-    int wt;   // Waiting Time
-    int tat;  // Turnaround Time
-    int ct;   // Completion Time
+    int at;  // Arrival Time
+    int bt;  // Burst Time
+    int wt;  // Waiting Time
+    int tat; // Turnaround Time
+    int ct;  // Completion Time
 };
 
 // Sort processes by arrival time
@@ -49,12 +49,15 @@ void FCFS(struct process p[], int n)
         t = p[i].ct;
     }
 
-    printf("\n%-5s%-5s%-5s%-5s%-5s%-5s\n", "PID", "AT", "BT", "CT", "WT", "TAT");
-
+    // printf("\n%-5s%-5s%-5s%-5s%-5s%-5s\n", "PID", "AT", "BT", "CT", "WT", "TAT");
+    printf("PID\tAT\tBT\tCT\tWT\tTAT\n");
     for (int i = 0; i < n; i++)
     {
-        printf("%-5d%-5d%-5d%-5d%-5d%-5d\n",
-               i, p[i].at, p[i].bt, p[i].ct, p[i].wt, p[i].tat);
+        /* printf("%-5d%-5d%-5d%-5d%-5d%-5d\n",
+                i, p[i].at, p[i].bt, p[i].ct, p[i].wt, p[i].tat);*/
+        printf("%d\t%d\t%d\t%d\t%d\t%d\n",
+               i, p[i].at, p[i].bt,
+               p[i].ct, p[i].wt, p[i].tat);
     }
 
     float awt = 0.0, atat = 0.0;
